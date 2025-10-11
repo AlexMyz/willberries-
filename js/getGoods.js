@@ -30,8 +30,8 @@ const getGoods = () => {
         const array = category ? data.filter(item => item[category] === value) : data
         localStorage.setItem("goods", JSON.stringify(array))
         
-        if (window.location.pathname !== "https://alexmyz.github.io/willberries-/goods.html") {
-          window.location.href = "/goods.html"
+        if (window.location.pathname !== "/willberries-/goods.html") {
+          window.location.href = "/willberries-/goods.html"
         } else {
           renderGoods(array)
         }
@@ -56,7 +56,7 @@ const getGoods = () => {
     console.error('no more')
   }
 
-  if (localStorage.getItem('goods') && window.location.pathname === "https://alexmyz.github.io/willberries-/goods.html") {
+  if (localStorage.getItem('goods') && window.location.pathname === "/willberries-/goods.html") {
     renderGoods(JSON.parse(localStorage.getItem("goods")))
   }
 } 
