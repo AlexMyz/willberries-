@@ -30,7 +30,7 @@ const search = () => {
         const array = data.filter(good => good.name.toLowerCase().includes(value.toLowerCase()))
         localStorage.setItem("goods", JSON.stringify(array))
 
-        if (window.location.pathname !== "/glo_academy/wildberris/goods.html") {
+        if (window.location.pathname !== "/goods.html") {
           window.location.href = "./goods.html"
         } else {
           renderGoods(array)
