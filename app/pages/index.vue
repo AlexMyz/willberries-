@@ -16,11 +16,8 @@
                 <span class="button-text">Shop now</span>
               </button>
             </div>
-            <!-- /.col-4 offset-lg-1 -->
           </div>
-          <!-- /.row -->
         </div>
-        <!-- /.container -->
       </section>
       <section class="slide slide-1 swiper-slide">
         <div class="container">
@@ -37,11 +34,8 @@
                 <span class="button-text">Shop now</span>
               </button>
             </div>
-            <!-- /.col-4 offset-lg-1 -->
           </div>
-          <!-- /.row -->
         </div>
-        <!-- /.container -->
       </section>
       <section class="slide slide-1 swiper-slide">
         <div class="container">
@@ -65,7 +59,6 @@
         <!-- /.container -->
       </section>
     </div>
-    <!-- /.swiper-wrapper -->
     <div class="slider-nav">
       <div class="container">
         <div class="row justify-content-between">
@@ -74,21 +67,15 @@
               <img src="/img/arrow-prev.svg" alt="icon: arrow-prev" />
             </button>
           </div>
-          <!-- /.col-1 -->
           <div class="col-1">
             <button class="slider-button slider-button-next">
               <img src="/img/arrow-next.svg" alt="icon: arrow-prev" />
             </button>
           </div>
-          <!-- /.col-1 -->
         </div>
-        <!-- /.row -->
       </div>
-      <!-- /.container -->
     </div>
-    <!-- /.slider-nav -->
   </section>
-  <!-- /.slider -->
   <section class="special-offers container pt-5 pb-4">
     <div class="row mb-4">
       <div class="col-xl-6">
@@ -102,9 +89,7 @@
             <img src="/img/arrow.svg" alt="icon: arrow" class="button-icon" />
           </button>
         </div>
-        <!-- /.card -->
       </div>
-      <!-- /.col-6 -->
       <div class="col-xl-6">
         <div class="card card-2 mb-4">
           <h3 class="card-title text-light">
@@ -118,9 +103,7 @@
             <img src="/img/arrow.svg" alt="icon: arrow" class="button-icon" />
           </button>
         </div>
-        <!-- /.card -->
       </div>
-      <!-- /.col-6 -->
       <div class="col-xl-9 col-lg-6 mb-4">
         <div class="card card-3">
           <span class="label">Bestseller</span>
@@ -133,9 +116,7 @@
             <span class="button-text">Shop now</span>
           </button>
         </div>
-        <!-- /.card -->
       </div>
-      <!-- /.col-9 -->
       <div class="col-xl-3 col-lg-6">
         <div class="card card-4">
           <h3 class="card-title text-light mw-160">Printed Shirt with a Bow</h3>
@@ -145,296 +126,59 @@
             <span class="button-text">Shop now</span>
           </button>
         </div>
-        <!-- /.card -->
       </div>
-      <!-- /.col-3 -->
     </div>
-    <!-- /.row -->
     <div class="row align-items-center mb-4">
       <div class="col-9">
         <h2 class="section-title">New Arrival</h2>
       </div>
-      <!-- /.col-9 -->
       <div class="col-3 d-flex justify-content-end">
-        <NuxtLink :to="{path: '/products', query: {field: 'label', name: 'New'}}" class="more">View All</NuxtLink>
+        <NuxtLink
+          :to="{ path: '/products', query: { field: 'label', name: 'New' } }"
+          class="more"
+          >View All</NuxtLink
+        >
       </div>
-      <!-- /.col-3 -->
     </div>
-    <!-- /.row -->
     <div class="short-goods row">
       <div class="col-lg-3 col-sm-6" v-for="card in data" :key="card.id">
         <div class="goods-card">
-          <span class="label">{{ card.label.toUpperCase() }}</span>
-          <img
-            :src="card.img"
-            alt="image: Hoodie"
-            class="goods-image"
-          />
+          <span class="label">{{ titleFormat(card.label) }}</span>
+          <img :src="card.img" alt="image: Hoodie" class="goods-image" />
           <h3 class="goods-title">{{ card.name }}</h3>
           <p class="goods-description">{{ card.description }}</p>
-          <button class="button goods-card-btn add-to-cart" data-id="012">
+          <button
+            class="button goods-card-btn add-to-cart"
+            @click="addToCart(card)"
+          >
             <span class="button-price">${{ card.price }}</span>
           </button>
         </div>
       </div>
     </div>
-    <!-- /.row -->
-  </section>
-  <!-- /.container -->
-  <section class="long-goods">
-    <div class="container">
-      <div class="row align-items-center mb-4">
-        <div class="col-12">
-          <h2 class="section-title">Category</h2>
-        </div>
-        <!-- /.col-12 -->
-      </div>
-      <div class="row long-goods-list">
-        <div class="col-lg-3 col-sm-6">
-          <div class="goods-card">
-            <span class="label">New</span>
-            <!-- /.label --><img
-              src="/img/image-119.jpg"
-              alt="image: Hoodie"
-              class="goods-image"
-            />
-            <h3 class="goods-title">Embroidered Hoodie</h3>
-            <!-- /.goods-title -->
-            <p class="goods-description">Yellow/Lilac/Fuchsia/Orange</p>
-            <!-- /.goods-description -->
-            <!-- /.goods-price -->
-            <button class="button goods-card-btn add-to-cart" data-id="007">
-              <span class="button-price">$89</span>
-            </button>
-          </div>
-          <!-- /.goods-card -->
-        </div>
-        <!-- /.col-3 -->
-        <div class="col-lg-3 col-sm-6">
-          <div class="goods-card">
-            <span class="label">New</span>
-            <!-- /.label --><img
-              src="/img/image-120.jpg"
-              alt="image: Faded Beach Trousers"
-              class="goods-image"
-            />
-            <h3 class="goods-title">Faded Beach Trousers</h3>
-            <!-- /.goods-title -->
-            <p class="goods-description">Navy/Ochre/Black/Khaki</p>
-            <!-- /.goods-description -->
-            <button class="button goods-card-btn add-to-cart" data-id="007">
-              <span class="button-price">$139</span>
-            </button>
-            <!-- /.goods-price -->
-          </div>
-          <!-- /.goods-card -->
-        </div>
-        <!-- /.col-3 -->
-        <div class="col-lg-3 col-sm-6">
-          <div class="goods-card">
-            <span class="label">New</span>
-            <!-- /.label --><img
-              src="/img/image-121.jpg"
-              alt="image: Text T-Shirt"
-              class="goods-image"
-            />
-            <h3 class="goods-title">Text T-Shirt</h3>
-            <!-- /.goods-title -->
-            <p class="goods-description">White</p>
-            <!-- /.goods-description -->
-            <button class="button goods-card-btn add-to-cart" data-id="007">
-              <span class="button-price">$59</span>
-            </button>
-            <!-- /.goods-price -->
-          </div>
-          <!-- /.goods-card -->
-        </div>
-        <!-- /.col-3 -->
-        <div class="col-lg-3 col-sm-6">
-          <div class="goods-card">
-            <span class="label">New</span>
-            <!-- /.label --><img
-              src="/img/image-122.jpg"
-              alt="image: Striped Long Sleeve Shirt"
-              class="goods-image"
-            />
-            <h3 class="goods-title">Striped Long Sleeve Shirt</h3>
-            <!-- /.goods-title -->
-            <p class="goods-description">Red/Sky Blue</p>
-            <!-- /.goods-description -->
-            <button class="button goods-card-btn add-to-cart" data-id="001">
-              <span class="button-price">$119</span>
-            </button>
-            <!-- /.goods-price -->
-          </div>
-          <!-- /.goods-card -->
-        </div>
-        <!-- /.col-3 -->
-        <div class="col-lg-3 col-sm-6">
-          <div class="goods-card">
-            <span class="label">New</span>
-            <!-- /.label --><img
-              src="/img/image-119.jpg"
-              alt="image: Hoodie"
-              class="goods-image"
-            />
-            <h3 class="goods-title">Embroidered Hoodie</h3>
-            <!-- /.goods-title -->
-            <p class="goods-description">Yellow/Lilac/Fuchsia/Orange</p>
-            <!-- /.goods-description -->
-            <!-- /.goods-price -->
-            <button class="button goods-card-btn add-to-cart" data-id="007">
-              <span class="button-price">$89</span>
-            </button>
-          </div>
-          <!-- /.goods-card -->
-        </div>
-        <!-- /.col-3 -->
-        <div class="col-lg-3 col-sm-6">
-          <div class="goods-card">
-            <span class="label">New</span>
-            <!-- /.label --><img
-              src="/img/image-120.jpg"
-              alt="image: Faded Beach Trousers"
-              class="goods-image"
-            />
-            <h3 class="goods-title">Faded Beach Trousers</h3>
-            <!-- /.goods-title -->
-            <p class="goods-description">Navy/Ochre/Black/Khaki</p>
-            <!-- /.goods-description -->
-            <button class="button goods-card-btn add-to-cart" data-id="007">
-              <span class="button-price">$139</span>
-            </button>
-            <!-- /.goods-price -->
-          </div>
-          <!-- /.goods-card -->
-        </div>
-        <!-- /.col-3 -->
-        <div class="col-lg-3 col-sm-6">
-          <div class="goods-card">
-            <span class="label">New</span>
-            <!-- /.label --><img
-              src="/img/image-121.jpg"
-              alt="image: Text T-Shirt"
-              class="goods-image"
-            />
-            <h3 class="goods-title">Text T-Shirt</h3>
-            <!-- /.goods-title -->
-            <p class="goods-description">White</p>
-            <!-- /.goods-description -->
-            <button class="button goods-card-btn add-to-cart" data-id="007">
-              <span class="button-price">$59</span>
-            </button>
-            <!-- /.goods-price -->
-          </div>
-          <!-- /.goods-card -->
-        </div>
-        <!-- /.col-3 -->
-        <div class="col-lg-3 col-sm-6">
-          <div class="goods-card">
-            <span class="label">New</span>
-            <!-- /.label --><img
-              src="/img/image-122.jpg"
-              alt="image: Striped Long Sleeve Shirt"
-              class="goods-image"
-            />
-            <h3 class="goods-title">Striped Long Sleeve Shirt</h3>
-            <!-- /.goods-title -->
-            <p class="goods-description">Red/Sky Blue</p>
-            <!-- /.goods-description -->
-            <button class="button goods-card-btn add-to-cart" data-id="001">
-              <span class="button-price">$119</span>
-            </button>
-            <!-- /.goods-price -->
-          </div>
-          <!-- /.goods-card -->
-        </div>
-        <!-- /.col-3 -->
-        <div class="col-lg-3 col-sm-6">
-          <div class="goods-card">
-            <span class="label">New</span>
-            <!-- /.label --><img
-              src="/img/image-119.jpg"
-              alt="image: Hoodie"
-              class="goods-image"
-            />
-            <h3 class="goods-title">Embroidered Hoodie</h3>
-            <!-- /.goods-title -->
-            <p class="goods-description">Yellow/Lilac/Fuchsia/Orange</p>
-            <!-- /.goods-description -->
-            <!-- /.goods-price -->
-            <button class="button goods-card-btn add-to-cart" data-id="007">
-              <span class="button-price">$89</span>
-            </button>
-          </div>
-          <!-- /.goods-card -->
-        </div>
-        <!-- /.col-3 -->
-        <div class="col-lg-3 col-sm-6">
-          <div class="goods-card">
-            <span class="label">New</span>
-            <!-- /.label --><img
-              src="/img/image-120.jpg"
-              alt="image: Faded Beach Trousers"
-              class="goods-image"
-            />
-            <h3 class="goods-title">Faded Beach Trousers</h3>
-            <!-- /.goods-title -->
-            <p class="goods-description">Navy/Ochre/Black/Khaki</p>
-            <!-- /.goods-description -->
-            <button class="button goods-card-btn add-to-cart" data-id="007">
-              <span class="button-price">$139</span>
-            </button>
-            <!-- /.goods-price -->
-          </div>
-          <!-- /.goods-card -->
-        </div>
-        <!-- /.col-3 -->
-        <div class="col-lg-3 col-sm-6">
-          <div class="goods-card">
-            <span class="label">New</span>
-            <!-- /.label --><img
-              src="/img/image-121.jpg"
-              alt="image: Text T-Shirt"
-              class="goods-image"
-            />
-            <h3 class="goods-title">Text T-Shirt</h3>
-            <!-- /.goods-title -->
-            <p class="goods-description">White</p>
-            <!-- /.goods-description -->
-            <button class="button goods-card-btn add-to-cart" data-id="007">
-              <span class="button-price">$59</span>
-            </button>
-            <!-- /.goods-price -->
-          </div>
-          <!-- /.goods-card -->
-        </div>
-        <!-- /.col-3 -->
-        <div class="col-lg-3 col-sm-6">
-          <div class="goods-card">
-            <span class="label">New</span>
-            <!-- /.label --><img
-              src="/img/image-122.jpg"
-              alt="image: Striped Long Sleeve Shirt"
-              class="goods-image"
-            />
-            <h3 class="goods-title">Striped Long Sleeve Shirt</h3>
-            <!-- /.goods-title -->
-            <p class="goods-description">Red/Sky Blue</p>
-            <!-- /.goods-description -->
-            <button class="button goods-card-btn add-to-cart" data-id="001">
-              <span class="button-price">$119</span>
-            </button>
-            <!-- /.goods-price -->
-          </div>
-          <!-- /.goods-card -->
-        </div>
-        <!-- /.col-3 -->
-      </div>
-    </div>
   </section>
 </template>
 
-<script setup>
-const { data } = await useFetch('/api/new-products')   
+<script setup lang="ts">
+import type { CartItem } from "~/models/cart-item.model"
+import type { Product } from "~/models/products.model"
+
+const { data } = await useFetch("/api/new-products")
+
+const cartItems = useCart()
+
+const addToCart = (product: Product) => {
+  const findItem = cartItems.value.find((c) => c.id === product.id)
+  if (findItem) {
+    findItem.count ++
+  } else {
+    const cartItem: CartItem = {
+      id: product.id,
+      name: product.name,
+      price: parseInt(product.price),
+      count: 1,
+    }
+    cartItems.value.push(cartItem)
+  }  
+}
 </script>
